@@ -1,0 +1,11 @@
+.drag {
+	background-color: #FFDEA5;
+	/*border:solid 1px;*/
+	margin: 4px 0;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.n-date-dp {
+	background-color: #CEF9DC;
+}
