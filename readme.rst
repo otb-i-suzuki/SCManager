@@ -1,70 +1,41 @@
 ###################
-What is CodeIgniter
+SCManagerについて
 ###################
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+本PGは、スケジュールに登録した予定をドラッグ＆ドロップ
+することで日付変更することが出来る機能をHTML5とjQueryで実現した
+サンプルプログラムになります。
 
-*******************
-Release Information
-*******************
+言語 PHP 7.2
+フレームワーク Codeigniter3
+CSRF対策(フレームワークの機能を使用)
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+■ドラッグ＆ドロップした要素を置くエリアの設定
+<td id="drp-area-1" class="droppable" ondragover="DragOver(event)" ondrop="Drop(event)" data-cnt="1">1</td>
 
-**************************
-Changelog and New Features
-**************************
+idを「drp-area-(日付)」と設定
+classを「droppable」と設定
+ondragoverを「DragOver(event)」と設定
+ondropを「Drop(event)」と設定
+data-cntとして日付を設定
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+■ドラッグ＆ドロップしたい要素の設定
+<div class="drag" data-id="1" id="drag-ev-1" draggable="true" ondragstart="DragStart(event)">予定(1)</div>
 
-*******************
-Server Requirements
-*******************
+idを「drag-ev-(予定番号)」と設定
+classを「drag」と設定
+draggableを「true」に設定
+ondragstartを「DragStart(event)」と設定
+data-idとして予定番号を設定
 
-PHP version 5.6 or newer is recommended.
+予定のドラッグ&ドロップが行われた際に、「Drop」イベントが走り、
+ajaxで対象予定IDのデータの日付の更新を行います。
 
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
+■動作確認用
 
-************
-Installation
-************
+http://otbis.php.xdomain.jp/SCManager/
 
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
+====================================================
 
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+`CodeIgniter License
+Agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
